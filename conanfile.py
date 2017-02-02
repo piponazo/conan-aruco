@@ -11,14 +11,14 @@ class ArucoConan(ConanFile):
     license = ' GNU LESSER GENERAL PUBLIC LICENSE Version 3, 29 June 2007'
 
     def config_options(self):
-        self.requires('OpenCV/3.2.0@fmiguelgarcia/stable')
+        self.requires('OpenCV/3.1.0-0@piponazo/testing')
 
     def source(self):
-        zip_name = "aruco-%s.zip" % self.lib_version
+        zip_name = 'aruco-%s.zip' % self.lib_version
         url='https://sourceforge.net/projects/aruco/files/%s/%s' % (self.lib_version, zip_name)
-        self.output.info("Downloading %s..." % url)
+        self.output.info('Downloading %s...' % url)
         tools.download(url, zip_name)
-        tools.unzip(zip_name, ".")
+        tools.unzip(zip_name, '.')
         os.remove(zip_name)
 
     def build(self):
