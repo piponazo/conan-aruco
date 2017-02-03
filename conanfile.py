@@ -14,12 +14,9 @@ class ArucoConan(ConanFile):
         self.requires('OpenCV/3.1.0-0@piponazo/testing')
 
     def source(self):
-        zip_name = 'aruco-%s.zip' % self.lib_version
-        url='https://sourceforge.net/projects/aruco/files/%s/%s' % (self.lib_version, zip_name)
-        self.output.info('Downloading %s...' % url)
-        tools.download(url, zip_name)
-        tools.unzip(zip_name, '.')
-        os.remove(zip_name)
+        url='https://sourceforge.net/projects/aruco/files/%s/aruco-%s.zip' % \
+            (self.lib_version, self.lib_version)
+        tools.get(url)
 
     def build(self):
         source_path = 'aruco-%s' % self.lib_version
