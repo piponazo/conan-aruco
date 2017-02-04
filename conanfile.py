@@ -3,7 +3,7 @@ from conans import ConanFile, tools, CMake
 
 class ArucoConan(ConanFile):
     name = 'ArUco'
-    lib_version = '2.0.18'
+    lib_version = '2.0.19'
     version = '%s-0' % lib_version
     settings = 'os', 'compiler', 'build_type', 'arch'
     description = 'ArUco recipe for the public repository in sourceforge'

@@ -6,7 +6,7 @@ CHANNEL = os.getenv('CONAN_CHANNEL', 'testing')
 
 class LiblasTestConan(ConanFile):
     settings = 'os', 'compiler', 'build_type', 'arch'
-    requires = 'ArUco/2.0.18-0@%s/%s' % (USERNAME, CHANNEL)
+    requires = 'ArUco/2.0.19-0@%s/%s' % (USERNAME, CHANNEL)
     generators = 'cmake'
 
     def imports(self):
