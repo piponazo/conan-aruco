@@ -18,10 +18,7 @@ class LiblasTestConan(ConanFile):
     def build(self):
        cmake = CMake(self.settings)
 
-       # TODO : Remove CMAKE_MODULE_PATH when Aruco CMake code improves
-       cmake_options = ['CMAKE_BUILD_TYPE=%s' % self.settings.build_type,
-                        'CMAKE_MODULE_PATH="%s"' % self.deps_cpp_info['ArUco'].rootpath +
-                        '/lib/cmake']
+       cmake_options = ['CMAKE_BUILD_TYPE=%s' % self.settings.build_type]
        options = '-D' + ' -D'.join(cmake_options)
 
        self.run('cmake "%s" %s %s' % (self.conanfile_directory, cmake.command_line, options))
